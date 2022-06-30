@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+
+    <title>Clientes - CompraVenda</title>
+</head>
+<body>
+    <header>
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a href="index.html" class="navbar-brand">
+                    <img id="logo" src="img/logo.png" alt="CompraVenda"> CompraVenda
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link" id="home">Home</a>
+                        <a href="categorias.html" class="nav-item nav-link" id="categorias">Categorias</a>
+                        <a href="clientes.html" class="nav-item nav-link" id="clientes">Clientes</a>
+                        <a href="compras.html" class="nav-item nav-link" id="compras">Compras</a>
+                        <a href="fornecedores.html" class="nav-item nav-link" id="fornecedores">Fornecedores</a>
+                        <a href="produtos.html" class="nav-item nav-link" id="produtos">Produtos</a>
+                        <a href="funcionarios.html" class="nav-item nav-link" id="funcionarios">Funcionários</a>
+                        <a href="vendas.html" class="nav-item nav-link" id="vendas">Vendas</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="justify-content-center align-items-center row">
+            <div class="col-4">
+                <form action="." method="POST" class="form-login">
+                    <div class="text-center mb-4">
+                        <h1>Clientes</h2>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" type="text" name="nome-cliente" placeholder="Informe o nome do cliente" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="cpf-cliente" type="text" placeholder="Informe o CPF do cliente" onkeypress="$(this).mask('000.000.000-00');" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" type="text" name="endereco-cliente" placeholder="Informe o endereço do cliente" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <select name="uf-cliente" class="form-select">
+                            <option selected>Selecione um estado</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="es">Espírito Santo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <select name="cidade-cliente" class="form-select">
+                            <option selected>Selecione uma cidade</option>
+                            <option value="rj">Niterói</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="mg">Belo Horizonte</option>
+                            <option value="es">Vitória</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" type="text" name="bairro-cliente" placeholder="Informe o bairro do cliente" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="cep-cliente" type="text" placeholder="Informe o CEP do cliente" onkeypress="$(this).mask('00000-000');" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="telefone-cliente" type="tel" placeholder="Informe o telefone do cliente" onkeypress="$(this).mask('(00) 00000-0000');" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" type="email" name="email-cliente" placeholder="Informe o e-mail do cliente" required autofocus />
+                    </div>
+
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-warning btn-block btn-lg" type="submit">Enviar</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQuery e JQuery Mask -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+
+</body>
+</html>

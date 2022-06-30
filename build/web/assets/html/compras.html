@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+
+    <title>Compras - CompraVenda</title>
+</head>
+<body>
+    <header>
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a href="index.html" class="navbar-brand">
+                    <img id="logo" src="img/logo.png" alt="CompraVenda"> CompraVenda
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link" id="home">Home</a>
+                        <a href="categorias.html" class="nav-item nav-link" id="categorias">Categorias</a>
+                        <a href="clientes.html" class="nav-item nav-link" id="clientes">Clientes</a>
+                        <a href="compras.html" class="nav-item nav-link" id="compras">Compras</a>
+                        <a href="fornecedores.html" class="nav-item nav-link" id="fornecedores">Fornecedores</a>
+                        <a href="produtos.html" class="nav-item nav-link" id="produtos">Produtos</a>
+                        <a href="funcionarios.html" class="nav-item nav-link" id="funcionarios">Funcionários</a>
+                        <a href="vendas.html" class="nav-item nav-link" id="vendas">Vendas</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="justify-content-center align-items-center row">
+            <div class="col-4">
+                <form action="." method="POST" class="form-login">
+                    <div class="text-center mb-4">
+                        <h1>Compras</h2>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" type="number" name="qtd-compra" placeholder="Informe a quantidade da compra" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="data-compra">Informe a data da compra: </label>
+                        <input class="form-control" name="data-compra" type="date" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="valor-compra" type="number" placeholder="Informe o valor da compra" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <select name="id-fornecedor" class="form-select">
+                            <option selected>Selecione o fornecedor</option>
+                            <option value="rj">Candura</option>
+                            <option value="sp">Seara</option>
+                            <option value="mg">Royalpack</option>
+                            <option value="es">Bela Vista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <select name="id-produto" class="form-select">
+                            <option selected>Selecione o produto</option>
+                            <option value="rj">Geladeira</option>
+                            <option value="sp">Notebook Dell</option>
+                            <option value="mg">Microondas</option>
+                            <option value="es">IPhone XR</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <select name="id-funcionario" class="form-select">
+                            <option selected>Selecione o funcionário</option>
+                            <option value="rj">João</option>
+                            <option value="sp">Maria</option>
+                            <option value="mg">Lucas</option>
+                            <option value="es">Bruna</option>
+                        </select>
+                    </div>
+
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-warning btn-block btn-lg" type="submit">Enviar</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQuery e JQuery Mask -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+
+</body>
+</html>

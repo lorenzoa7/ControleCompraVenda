@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+
+    <title>Login - CompraVenda</title>
+</head>
+<body>
+    <div class="container">
+        <div class="justify-content-center align-items-center row">
+            <div class="col-4">
+                <form action="." method="POST" class="form-login">
+                    <div class="text-center mb-4">
+                        <h1>Faça seu Login</h2>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="cpf" type="text" placeholder="Informe seu CPF" onkeypress="$(this).mask('000.000.000-00');" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <input class="form-control" name="senha" type="password" placeholder="Informe sua senha" required autofocus />
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-warning btn-block btn-lg" type="submit">Entrar</button>
+                    </div>
+                </form>
+                <p class="mt-5 mb-3 text-muted text-center">&copy; Todos os direitos reservados</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQuery e JQuery Mask -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+
+</body>
+</html>
