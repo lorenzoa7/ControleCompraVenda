@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
                 <div class="navbar-nav">
                     <a href="ClienteController?acao=mostrar" class="nav-item nav-link" id="visualizar">Mostrar Clientes</a>
-                    <a href="#" class="nav-item nav-link" id="vender">Realizar uma venda</a>
+                    <a href="VendaController?acao=mostrar" class="nav-item nav-link" id="vender">Realizar uma venda</a>
                     <a href="index.jsp" class="nav-item nav-link" id="sair">Sair</a>
                 </div>
             </div>

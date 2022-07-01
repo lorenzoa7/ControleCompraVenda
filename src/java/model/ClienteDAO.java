@@ -32,7 +32,7 @@ public class ClienteDAO extends HttpServlet {
             // para o BD
             Statement stmt = conexao.createStatement();
             // Armazena o resultado do comando enviado para o banco de dados
-            ResultSet rs = stmt.executeQuery("select * from cliente");
+            ResultSet rs = stmt.executeQuery("select * from clientes");
             // rs.next() Aponta para o próximo registro do BD, se houver um 
             while( rs.next() ) {
                 //Cria o objeto da classe Cliente para armazenar os dados
@@ -73,7 +73,7 @@ public class ClienteDAO extends HttpServlet {
     public Cliente getClientePorID( int codigo ) {
         Cliente Cliente = new Cliente();
         try {
-            String sql = "SELECT * FROM cliente WHERE id = ?";
+            String sql = "SELECT * FROM clientes WHERE id = ?";
             PreparedStatement ps = conexao.prepareStatement(sql);
             ps.setInt(1, codigo);
             
@@ -98,15 +98,43 @@ public class ClienteDAO extends HttpServlet {
         return Cliente;
     }
     
+    public String getClientePorString( int codigo ) {
+        Cliente Cliente = new Cliente();
+        try {
+            String sql = "SELECT * FROM clientes WHERE id = ?";
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setInt(1, codigo);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if ( rs.next() ) {
+                Cliente.setId(rs.getInt("id") );
+                Cliente.setNome( rs.getString("nome") );
+                Cliente.setCPF( rs.getString("cpf") );
+                Cliente.setEndereco(rs.getString("endereco") );
+                Cliente.setBairro(rs.getString("bairro") );
+                Cliente.setCidade(rs.getString("cidade") );
+                Cliente.setUF(rs.getString("uf") );
+                Cliente.setCEP(rs.getString("cep") );
+                Cliente.setTelefone(rs.getString("telefone") );
+                Cliente.setEmail(rs.getString("email") );
+            }
+            
+        } catch( SQLException e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        return Cliente.getNome();
+    }
+    
     public boolean gravar( Cliente Cliente ) {
         try {
             String sql;
             if ( Cliente.getId() == 0 ) {
                 // Realizar uma inclusão
-                sql = "INSERT INTO cliente (nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email) VALUES (?,?,?,?,?,?,?,?,?)";
+                sql = "INSERT INTO clientes (nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email) VALUES (?,?,?,?,?,?,?,?,?)";
             } else {
                 // Realizar uma alteração
-                sql = "UPDATE cliente SET nome=?, cpf=?, endereco=?, bairro=?, cidade=?, uf=?, cep=?, telefone=?, email=? WHERE id=?";
+                sql = "UPDATE clientes SET nome=?, cpf=?, endereco=?, bairro=?, cidade=?, uf=?, cep=?, telefone=?, email=? WHERE id=?";
             }
             
             PreparedStatement ps = conexao.prepareStatement(sql);
@@ -135,7 +163,7 @@ public class ClienteDAO extends HttpServlet {
     
     public boolean excluir( int id ) {
         try {
-            String sql = "DELETE FROM cliente WHERE id = ?";
+            String sql = "DELETE FROM clientes WHERE id = ?";
             PreparedStatement ps = conexao.prepareStatement(sql);
             ps.setInt(1, id);
             ps.execute();

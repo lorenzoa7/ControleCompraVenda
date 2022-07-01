@@ -103,7 +103,7 @@ public class ClienteController extends HttpServlet {
             if (dao.gravar(cliente)) {
                 mensagem = "Cliente gravado com sucesso!";
             } else {
-                mensagem = "Erro ao gravar cliente caralho!";
+                mensagem = "Erro ao gravar cliente!";
             }
 
             request.setAttribute("mensagem", mensagem);

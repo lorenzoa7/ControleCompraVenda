@@ -35,7 +35,7 @@
                         <input type="text" class="form-control" name="uf" value="<%= aux.getUF() %>" size="2" maxlength="2" placeholder="Informe o UF" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="cep" value="<%= aux.getCEP() %>" onkeypress="$(this).mask('00000-000');" placeholder="Informe o CEP" required />
+                        <input type="text" class="form-control" name="cep" value="<%= aux.getCEP() %>" size="4" maxlength="8" placeholder="Informe o CEP" required />
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="telefone" value="<%= aux.getTelefone() %>" onkeypress="$(this).mask('(00) 00000-0000');" placeholder="Informe o telefone" required />

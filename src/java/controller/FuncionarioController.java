@@ -17,12 +17,14 @@ public class FuncionarioController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String user = request.getParameter("user");
-        System.out.println(user);
 
         
         switch (user) {
             case "vendedor":
                 response.sendRedirect("ClienteController?acao=mostrar");
+                break;
+            case "comprador":
+                response.sendRedirect("FornecedorController?acao=mostrar");
                 break;
         }
 
