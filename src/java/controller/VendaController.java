@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.ClienteDAO;
 import model.FuncionarioDAO;
 import model.ProdutoDAO;
@@ -24,75 +25,91 @@ public class VendaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        HttpSession sessao = request.getSession();
+        String papel = (String) sessao.getAttribute("logado");
+        
+        if (papel != null && "vendedor".equals(papel)) {
 
-        VendaDAO vendadao = new VendaDAO();
-        ProdutoDAO produtodao = new ProdutoDAO();
-        ClienteDAO clientedao = new ClienteDAO();
-        FuncionarioDAO funcionariodao = new FuncionarioDAO();
-        String acao = (String) request.getParameter("acao");
-        int id;
-        ArrayList<Venda> minhasVendas;
-        ArrayList<Produto> meusProdutos;
-        ArrayList<Cliente> meusClientes;
-        ArrayList<Funcionario> meusFuncionarios;
+            VendaDAO vendadao = new VendaDAO();
+            ProdutoDAO produtodao = new ProdutoDAO();
+            ClienteDAO clientedao = new ClienteDAO();
+            FuncionarioDAO funcionariodao = new FuncionarioDAO();
+            String acao = (String) request.getParameter("acao");
+            int id;
+            ArrayList<Venda> minhasVendas;
+            ArrayList<Produto> meusProdutos;
+            ArrayList<Cliente> meusClientes;
+            ArrayList<Funcionario> meusFuncionarios;
 
-        Venda venda = new Venda();
-        switch (acao) {
-            case "mostrar":
-                minhasVendas = vendadao.getLista();
-                request.setAttribute("minhasVendas", minhasVendas);
-                RequestDispatcher mostrar = getServletContext().getRequestDispatcher("/lista_vendas_view.jsp");
-                mostrar.forward(request, response);
-                break;
+            Venda venda = new Venda();
+            switch (acao) {
+                case "mostrar":
+                    minhasVendas = vendadao.getLista();
+                    request.setAttribute("minhasVendas", minhasVendas);
+                    RequestDispatcher mostrar = getServletContext().getRequestDispatcher("/lista_vendas_view.jsp");
+                    mostrar.forward(request, response);
+                    break;
 
-            case "realizar_venda":
-                venda.setId(0);
-                meusProdutos = produtodao.getListaDisponiveis();
-                meusClientes = clientedao.getLista();
-                meusFuncionarios = funcionariodao.getLista();
+                case "realizar_venda":
+                    venda.setId(0);
+                    meusProdutos = produtodao.getListaDisponiveis();
+                    meusClientes = clientedao.getLista();
+                    meusFuncionarios = funcionariodao.getLista();
 
-                request.setAttribute("venda", venda);
-                request.setAttribute("meusProdutos", meusProdutos);
-                request.setAttribute("meusClientes", meusClientes);
-                request.setAttribute("meusFuncionarios", meusFuncionarios);
-                RequestDispatcher incluir = getServletContext().getRequestDispatcher("/realizar_venda.jsp");
-                incluir.forward(request, response);
-                break;
-
-            case "editar":
-
-                id = Integer.parseInt(request.getParameter("id"));
-                venda = vendadao.getVendaPorID(id);
-                meusProdutos = produtodao.getListaDisponiveis();
-                meusClientes = clientedao.getLista();
-                meusFuncionarios = funcionariodao.getLista();
-
-                if (venda.getId() > 0) {
                     request.setAttribute("venda", venda);
                     request.setAttribute("meusProdutos", meusProdutos);
                     request.setAttribute("meusClientes", meusClientes);
                     request.setAttribute("meusFuncionarios", meusFuncionarios);
-                    RequestDispatcher rs = request.getRequestDispatcher("realizar_venda.jsp");
-                    rs.forward(request, response);
-                } else {
-                    String mensagem = "Erro ao gravar venda!";
-                    request.setAttribute("mensagem", mensagem);
-                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/mensagem_vendedor.jsp");
-                    rd.forward(request, response);
-                }
-                break;
+                    RequestDispatcher incluir = getServletContext().getRequestDispatcher("/realizar_venda.jsp");
+                    incluir.forward(request, response);
+                    break;
 
-            case "excluir":
+                case "editar":
 
-                id = Integer.parseInt(request.getParameter("id"));
-                vendadao.excluir(id);
-                
+                    id = Integer.parseInt(request.getParameter("id"));
+                    venda = vendadao.getVendaPorID(id);
+                    meusProdutos = produtodao.getListaDisponiveis();
+                    meusClientes = clientedao.getLista();
+                    meusFuncionarios = funcionariodao.getLista();
 
-                minhasVendas = vendadao.getLista();
-                request.setAttribute("minhasVendas", minhasVendas);
-                RequestDispatcher aposexcluir = getServletContext().getRequestDispatcher("/lista_vendas_view.jsp");
-                aposexcluir.forward(request, response);
-                break;
+                    if (venda.getId() > 0) {
+                        request.setAttribute("venda", venda);
+                        request.setAttribute("meusProdutos", meusProdutos);
+                        request.setAttribute("meusClientes", meusClientes);
+                        request.setAttribute("meusFuncionarios", meusFuncionarios);
+                        RequestDispatcher rs = request.getRequestDispatcher("realizar_venda.jsp");
+                        rs.forward(request, response);
+                    } else {
+                        String mensagem = "Erro ao gravar venda!";
+                        request.setAttribute("mensagem", mensagem);
+                        RequestDispatcher rd = getServletContext().getRequestDispatcher("/mensagem_vendedor.jsp");
+                        rd.forward(request, response);
+                    }
+                    break;
+
+                case "excluir":
+
+                    id = Integer.parseInt(request.getParameter("id"));
+                    vendadao.excluir(id);
+
+
+                    minhasVendas = vendadao.getLista();
+                    request.setAttribute("minhasVendas", minhasVendas);
+                    RequestDispatcher aposexcluir = getServletContext().getRequestDispatcher("/lista_vendas_view.jsp");
+                    aposexcluir.forward(request, response);
+                    break;
+            }
+        } else {
+            String mensagem;
+            if ("invalido".equals(papel)) {
+                mensagem = "O usuário ou a senha estão errados!";
+            } else {
+                mensagem = "Você não tem permissão para acessar a área de vendedor!";
+            }
+            request.setAttribute("mensagem", mensagem);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/mensagem_funcionario.jsp");
+            rd.forward(request, response);
         }
     }
 

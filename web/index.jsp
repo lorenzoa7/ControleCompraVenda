@@ -26,17 +26,7 @@
                         <div class="form-group">
                             <input class="form-control" type="password" name="senha" placeholder="Informe a senha do funcionário" required autofocus />
                         </div>
-                        
-                        <div class="form-group text-center">
-                            <h4>Você é:</h4>
-                            <label for="vendedor" class="form-label">Vendedor</label>
-                            <input type="radio" id="vendedor" value="vendedor" name="user" checked><br>
-                            <label for="comprador" class="form-label">Comprador</label>     
-                            <input type="radio" id="comprador" value="comprador" name="user"><br>
-                            <label for="administrador" class="form-label">Administrador</label>     
-                            <input type="radio" id="administrador" value="administrador" name="user">
-                        </div>
-                        
+                                       
                         <div class="d-grid gap-2">
                             <button class="btn btn-warning btn-block btn-lg" type="submit">Entrar</button>
                         </div>

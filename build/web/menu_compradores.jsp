@@ -12,7 +12,7 @@
                     <a href="FornecedorController?acao=mostrar" class="nav-item nav-link" id="visualizar">Mostrar Fornecedores</a>
                     <a href="CompraController?acao=mostrar" class="nav-item nav-link" id="vender">Realizar uma compra</a>
                     <a href="ProdutoController?acao=mostrar" class="nav-item nav-link" id="vender">Gerenciar Produtos</a>
-                    <a href="index.jsp" class="nav-item nav-link" id="sair">Sair</a>
+                    <a href="FuncionarioController?acao=sair" class="nav-item nav-link" id="sair">Sair</a>
                 </div>
             </div>
         </nav>

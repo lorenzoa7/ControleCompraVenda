@@ -108,6 +108,35 @@ public class FuncionarioDAO extends HttpServlet {
         return Funcionario.getNome();
     }
     
+    public Funcionario getFuncionarioPorLogin( String cpf, String senha ) {
+        Funcionario Funcionario = new Funcionario();
+        try {
+            String sql = "SELECT * FROM funcionarios WHERE cpf = ? AND senha = ?";
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, cpf);
+            ps.setString(2, senha);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if ( rs.next() ) {
+                System.out.println("TA LOGADO SIM HEIN");
+                Funcionario.setId(rs.getInt("id") );
+                Funcionario.setNome( rs.getString("nome") );
+                Funcionario.setCpf( rs.getString("cpf") );
+                Funcionario.setSenha( rs.getString("senha") );
+                Funcionario.setPapel( rs.getString("papel") );
+               
+            } else {
+                System.out.println("ENTROU AQUI PQ NAO TA LOGADO");
+                Funcionario.setId(-1);
+            }
+            
+        } catch( SQLException e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        return Funcionario;
+    }
+    
     public boolean gravar( Funcionario Funcionario ) {
         try {
             String sql;

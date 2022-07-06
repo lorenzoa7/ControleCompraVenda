@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/lista_clientes_view.jsp</file>
-            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/menu_vendedores.jsp</file>
-            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/assets/css/estilo.css</file>
-            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/ClienteController.java</file>
-            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/index.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/menu_compradores.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/realizar_venda.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/aplicacao/Venda.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/ProdutoController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/cadastrar_categoria.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/model/CategoriaDAO.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/model/ProdutoDAO.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/definir_categoria.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/lista_produtos_view.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/CategoriaController.java</file>
         </group>
     </open-files>
 </project-private>
