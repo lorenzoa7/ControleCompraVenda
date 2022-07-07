@@ -4,6 +4,7 @@
             <a href="FornecedorController?acao=mostrar" class="navbar-brand">
                 <img id="logo" src="assets/images/logo.png" alt="CompraVenda"> CompraVenda
             </a>
+            <span class="status">Área de Compradores</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

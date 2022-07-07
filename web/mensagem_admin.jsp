@@ -5,7 +5,7 @@
     <%@include file="cabecalho.html" %>
 </head>
 <body>
-    <jsp:include page="menu_compradores.jsp" />
+    <jsp:include page="menu_admin.jsp" />
 
     <div class="container">
         <div class="justify-content-center align-items-center row">
@@ -15,7 +15,7 @@
                         <%= request.getAttribute("mensagem") %>
                     </h5>
                 </div>
-                <div><a href="FuncionarioController?acao=mostrar_admin">Retorna</a></div>
+                <div><a href="FuncionarioController?acao=mostrar_admin" class="retorna">Retorna</a></div>
             </div>
         </div>
     </div>

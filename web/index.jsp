@@ -9,7 +9,7 @@
         <div class="justify-content-center align-items-center row">
             <div class="col-4">
                 <div class="text-center mb-4">
-                    <a href="#" class="btn btn-warning btn-block btn-lg">Área do Cliente</a>
+                    <a href="AreaClienteController" class="btn btn-warning btn-block btn-lg">Área do Cliente</a>
                 </div>
                 <div class="form-login">
                     <div class="text-center mb-4">

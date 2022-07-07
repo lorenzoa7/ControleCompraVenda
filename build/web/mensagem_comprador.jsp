@@ -15,7 +15,7 @@
                         <%= request.getAttribute("mensagem") %>
                     </h5>
                 </div>
-                <div><a href="FornecedorController?acao=mostrar">Retorna</a></div>
+                <div><a href="FornecedorController?acao=mostrar" class="retorna">Retorna</a></div>
             </div>
         </div>
     </div>

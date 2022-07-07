@@ -111,3 +111,27 @@ textarea {
     color: black;
     margin-bottom: 10px;
 }
+
+.retorna {
+  background-color: #4e5035;
+  color: white;
+  padding: 14px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  transition: 0.15s;
+}
+
+.retorna:hover {
+  background-color: #929564;
+  text-decoration: none;
+  color: white;
+}
+
+.status {
+    margin-left: 10px;
+    color: white;
+    padding: 5px;
+    background-color: #929564;
+    border-radius: 3px;
+}

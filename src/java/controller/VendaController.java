@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.ClienteDAO;
+import model.CompraDAO;
 import model.FuncionarioDAO;
 import model.ProdutoDAO;
 import model.VendaDAO;
@@ -120,6 +121,7 @@ public class VendaController extends HttpServlet {
         String mensagem;
         try {
             Venda venda = new Venda();
+            RequestDispatcher rd;
 
             venda.setId(Integer.parseInt(request.getParameter("id")));
             venda.setQuantidade_venda(Integer.parseInt(request.getParameter("quantidade_venda")));
@@ -130,6 +132,21 @@ public class VendaController extends HttpServlet {
             venda.setId_funcionario(Integer.parseInt(request.getParameter("funcionario")));
 
             VendaDAO dao = new VendaDAO();
+            ProdutoDAO produtodao = new ProdutoDAO();
+            
+            Produto produto = produtodao.getProdutoPorID(venda.getId_produto());
+            int nova_qtd_disponivel = produto.getQtdDisponivel() - venda.getQuantidade_venda();
+            System.out.println("Nova qtd disponivel é " + nova_qtd_disponivel);
+            if (nova_qtd_disponivel < 0) {
+                mensagem = "Não existem produtos disponíveis suficientes no estoque!";
+                request.setAttribute("mensagem", mensagem);
+                rd = getServletContext().getRequestDispatcher("/mensagem_vendedor.jsp");
+                rd.forward(request, response);
+            } else {
+                 produto.setQtdDisponivel(nova_qtd_disponivel);
+                 produtodao.gravar(produto);
+            }
+           
 
             if (dao.gravar(venda)) {
                 mensagem = "Venda realizada com sucesso!";
@@ -138,7 +155,7 @@ public class VendaController extends HttpServlet {
             }
 
             request.setAttribute("mensagem", mensagem);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/mensagem_vendedor.jsp");
+            rd = getServletContext().getRequestDispatcher("/mensagem_vendedor.jsp");
             rd.forward(request, response);
 
         } catch (Exception e) {

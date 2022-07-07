@@ -227,7 +227,6 @@ public class FuncionarioDAO extends HttpServlet {
             ResultSet rs = ps.executeQuery();
             
             if ( rs.next() ) {
-                System.out.println("TA LOGADO SIM HEIN");
                 Funcionario.setId(rs.getInt("id") );
                 Funcionario.setNome( rs.getString("nome") );
                 Funcionario.setCpf( rs.getString("cpf") );
@@ -235,7 +234,6 @@ public class FuncionarioDAO extends HttpServlet {
                 Funcionario.setPapel( rs.getString("papel") );
                
             } else {
-                System.out.println("ENTROU AQUI PQ NAO TA LOGADO");
                 Funcionario.setId(-1);
             }
             

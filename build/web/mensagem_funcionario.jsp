@@ -14,7 +14,7 @@
                         <%= request.getAttribute("mensagem") %>
                     </h5>
                 </div>
-                <div><a href="FuncionarioController?acao=sair">Sair e voltar</a></div>
+                <div><a href="FuncionarioController?acao=sair" class="retorna">Sair e voltar</a></div>
             </div>
         </div>
     </div>
