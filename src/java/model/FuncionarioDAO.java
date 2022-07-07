@@ -60,6 +60,114 @@ public class FuncionarioDAO extends HttpServlet {
         return resultado;
     }
     
+    public ArrayList<Funcionario> getListaAdmin() {
+        //Cria o objeto resultado que irá armazenar os registros retornados do BD
+        ArrayList<Funcionario> resultado = new ArrayList<>();
+        try {            
+            // Cria o objeto para quer será utilizado para enviar comandos SQL
+            // para o BD
+            Statement stmt = conexao.createStatement();
+            // Armazena o resultado do comando enviado para o banco de dados
+            ResultSet rs = stmt.executeQuery("SELECT * FROM funcionarios WHERE papel = 0 ");
+            // rs.next() Aponta para o próximo registro do BD, se houver um 
+            while( rs.next() ) {
+                //Cria o objeto da classe Funcionario para armazenar os dados
+                //que vieram do BD
+                Funcionario funcionario = new Funcionario();
+                
+                //Pega o conteúdo da coluna "id" do ResultSet (rs)
+                funcionario.setId(rs.getInt("id") );
+                //Pega o conteúdo da coluna "nome" do ResultSet (rs)
+                funcionario.setNome( rs.getString("nome") );
+                //Pega o conteúdo da coluna "cpf" do ResultSet (rs)
+                funcionario.setCpf( rs.getString("cpf") );
+                //Pega o conteúdo da coluna "senha" do ResultSet (rs)
+                funcionario.setSenha( rs.getString("senha") );
+                //Pega o conteúdo da coluna "papel" do ResultSet (rs)
+                funcionario.setPapel( rs.getString("papel") );
+                
+                resultado.add(funcionario);
+            }
+        } catch( SQLException e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        
+        // Retorna a lista de Funcionarios encontrados no banco de dados.
+        return resultado;
+    }
+    
+    public ArrayList<Funcionario> getListaVendedores() {
+        //Cria o objeto resultado que irá armazenar os registros retornados do BD
+        ArrayList<Funcionario> resultado = new ArrayList<>();
+        try {            
+            // Cria o objeto para quer será utilizado para enviar comandos SQL
+            // para o BD
+            Statement stmt = conexao.createStatement();
+            // Armazena o resultado do comando enviado para o banco de dados
+            ResultSet rs = stmt.executeQuery("SELECT * FROM funcionarios WHERE papel = 1 ");
+            // rs.next() Aponta para o próximo registro do BD, se houver um 
+            while( rs.next() ) {
+                //Cria o objeto da classe Funcionario para armazenar os dados
+                //que vieram do BD
+                Funcionario funcionario = new Funcionario();
+                
+                //Pega o conteúdo da coluna "id" do ResultSet (rs)
+                funcionario.setId(rs.getInt("id") );
+                //Pega o conteúdo da coluna "nome" do ResultSet (rs)
+                funcionario.setNome( rs.getString("nome") );
+                //Pega o conteúdo da coluna "cpf" do ResultSet (rs)
+                funcionario.setCpf( rs.getString("cpf") );
+                //Pega o conteúdo da coluna "senha" do ResultSet (rs)
+                funcionario.setSenha( rs.getString("senha") );
+                //Pega o conteúdo da coluna "papel" do ResultSet (rs)
+                funcionario.setPapel( rs.getString("papel") );
+                
+                resultado.add(funcionario);
+            }
+        } catch( SQLException e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        
+        // Retorna a lista de Funcionarios encontrados no banco de dados.
+        return resultado;
+    }
+    
+    public ArrayList<Funcionario> getListaCompradores() {
+        //Cria o objeto resultado que irá armazenar os registros retornados do BD
+        ArrayList<Funcionario> resultado = new ArrayList<>();
+        try {            
+            // Cria o objeto para quer será utilizado para enviar comandos SQL
+            // para o BD
+            Statement stmt = conexao.createStatement();
+            // Armazena o resultado do comando enviado para o banco de dados
+            ResultSet rs = stmt.executeQuery("SELECT * FROM funcionarios WHERE papel = 2 ");
+            // rs.next() Aponta para o próximo registro do BD, se houver um 
+            while( rs.next() ) {
+                //Cria o objeto da classe Funcionario para armazenar os dados
+                //que vieram do BD
+                Funcionario funcionario = new Funcionario();
+                
+                //Pega o conteúdo da coluna "id" do ResultSet (rs)
+                funcionario.setId(rs.getInt("id") );
+                //Pega o conteúdo da coluna "nome" do ResultSet (rs)
+                funcionario.setNome( rs.getString("nome") );
+                //Pega o conteúdo da coluna "cpf" do ResultSet (rs)
+                funcionario.setCpf( rs.getString("cpf") );
+                //Pega o conteúdo da coluna "senha" do ResultSet (rs)
+                funcionario.setSenha( rs.getString("senha") );
+                //Pega o conteúdo da coluna "papel" do ResultSet (rs)
+                funcionario.setPapel( rs.getString("papel") );
+                
+                resultado.add(funcionario);
+            }
+        } catch( SQLException e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        
+        // Retorna a lista de Funcionarios encontrados no banco de dados.
+        return resultado;
+    }
+    
     public Funcionario getFuncionarioPorID( int codigo ) {
         Funcionario Funcionario = new Funcionario();
         try {

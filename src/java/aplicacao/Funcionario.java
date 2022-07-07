@@ -48,5 +48,15 @@ public class Funcionario {
         this.papel = papel;
     }
     
-
+    public String getPapelString() {
+        if ("0".equals(papel)) {
+            return "Administrador";
+        } else if ("1".equals(papel)) {
+            return "Vendedor";
+        } else if ("2".equals(papel)) {
+            return "Comprador";
+        } else {
+            return "Nenhum";
+        }
+    }
 }
