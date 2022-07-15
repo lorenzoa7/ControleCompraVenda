@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/cadastrar_fornecedor.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/AreaClienteController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/FuncionarioController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/ProdutoController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/model/ProdutoDAO.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/CompraController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/web/lista_vendas_view.jsp</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/model/CompraDAO.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/controller/CategoriaController.java</file>
+            <file>file:/C:/Facul%20SI/Desenvolvimento%20Web/TrabalhoDevWeb/src/java/model/Conexao.java</file>
+        </group>
     </open-files>
 </project-private>

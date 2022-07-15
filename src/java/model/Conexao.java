@@ -21,7 +21,7 @@ public class Conexao extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver"); //load driver                       
                 System.out.println("Driver foi carregado!");
                 //Abre a conexão com o banco de dados via JDBC
-                conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "");
+                conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/estoque", "root", "");
                 System.out.println("Conexão realizada com sucesso!");
             }
             catch( ClassNotFoundException e ) {
