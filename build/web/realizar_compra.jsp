@@ -17,7 +17,9 @@
                       <input type="hidden" class="form-control" name="id" value="<%= aux.getId() %>">
                       
                     <select class="form-select" aria-label="Selecione um produto" name="produto">
-                        <option selected>Selecione um produto</option>
+                        <% if (aux.getId_produto() == 0) { %>
+                            <option selected>Selecione um produto</option>
+                        <% } %>
                         <%
                                 ArrayList<Produto> ListaProduto = (ArrayList<Produto>) request.getAttribute("meusProdutos");
                                 for (int i = 0; i < ListaProduto.size(); i++) {
@@ -25,20 +27,30 @@
                         %>
                         <option value="<%=produtoaux.getId()%>"><%=produtoaux.getNome()%></option>
                         <%
+                            if (produtoaux.getId() == aux.getId_produto()) {
+                            %>
+                            <option selected value="<%=produtoaux.getId()%>"><%=produtoaux.getNome()%></option>
+                            <% }
                             }
                         %>
                     </select>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="quantidade_compra" placeholder="Informe a quantidade de produtos"  required />
+                        <input type="number" class="form-control" name="quantidade_compra" placeholder="Informe a quantidade de produtos" value="<%= aux.getQuantidade_compra() %>" required />
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="valor_compra" placeholder="Informe o valor da compra" required />
+                        <input type="number" class="form-control" name="valor_compra" placeholder="Informe o valor da compra" value="<%= aux.getValor_compra() %>" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="data_compra" placeholder="Informe a data da compra" onfocus="(this.type='date')" required />
+                        <% if(aux.getData_compra() == null) { %>
+                            <input type="text" class="form-control" name="data_venda" placeholder="Informe a data da compra" onfocus="(this.type='date')" required />
+                        <% } else { %>
+                        <input type="text" class="form-control" name="data_venda" placeholder="Informe a data da compra" onfocus="(this.type='date')" value="<%= aux.getData_compra() %>" required />
+                        <% } %>
                     </div>
                     <select class="form-select" aria-label="Selecione o fornecedor" name="fornecedor">
-                        <option selected>Selecione o fornecedor</option>
+                        <% if (aux.getId_fornecedor() == 0) { %>
+                            <option selected>Selecione um fornecedor</option>
+                        <% } %>
                         <%
                                 ArrayList<Fornecedor> ListaFornecedor = (ArrayList<Fornecedor>) request.getAttribute("meusFornecedores");
                                 for (int i = 0; i < ListaFornecedor.size(); i++) {
@@ -46,11 +58,17 @@
                         %>
                         <option value="<%=fornecedoraux.getId()%>"><%=fornecedoraux.getRazao_social()%></option>
                         <%
+                            if (fornecedoraux.getId() == aux.getId_produto()) {
+                            %>
+                            <option selected value="<%=fornecedoraux.getId()%>"><%=fornecedoraux.getRazao_social()%></option>
+                            <% }
                             }
                         %>
                     </select>
                     <select class="form-select" aria-label="Selecione o funcionário" name="funcionario">
-                        <option selected>Selecione o funcionário</option>
+                        <% if (aux.getId_funcionario() == 0) { %>
+                            <option selected>Selecione um funcionário</option>
+                        <% } %>
                         <%
                                 ArrayList<Funcionario> ListaFuncionario = (ArrayList<Funcionario>) request.getAttribute("meusFuncionarios");
                                 for (int i = 0; i < ListaFuncionario.size(); i++) {
@@ -58,6 +76,10 @@
                         %>
                         <option value="<%=funcionarioaux.getId()%>"><%=funcionarioaux.getNome()%></option>
                         <%
+                            if (funcionarioaux.getId() == aux.getId_produto()) {
+                            %>
+                            <option selected value="<%=funcionarioaux.getId()%>"><%=funcionarioaux.getNome()%></option>
+                            <% }
                             }
                         %>
                     </select>

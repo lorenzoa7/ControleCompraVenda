@@ -53,6 +53,16 @@ public class CompraController extends HttpServlet {
 
                 case "realizar_compra":
                     compra.setId(0);
+                    compra.setId(0);
+                    compra.setQuantidade_compra(null);
+                    compra.setData_compra(null);
+                    compra.setValor_compra(null);
+                    compra.setId_fornecedor(0);
+                    compra.setId_produto(0);
+                    compra.setId_funcionario(0);
+                    compra.setFornecedor("");
+                    compra.setProduto("");
+                    compra.setFuncionario("");
                     meusProdutos = produtodao.getListaDisponiveis();
                     meusFornecedores = fornecedordao.getLista();
                     meusFuncionarios = funcionariodao.getLista();

@@ -54,6 +54,15 @@ public class VendaController extends HttpServlet {
 
                 case "realizar_venda":
                     venda.setId(0);
+                    venda.setQuantidade_venda(null);
+                    venda.setData_venda(null);
+                    venda.setValor_venda(null);
+                    venda.setId_cliente(0);
+                    venda.setId_produto(0);
+                    venda.setId_funcionario(0);
+                    venda.setCliente("");
+                    venda.setProduto("");
+                    venda.setFuncionario("");
                     meusProdutos = produtodao.getListaDisponiveis();
                     meusClientes = clientedao.getLista();
                     meusFuncionarios = funcionariodao.getLista();
