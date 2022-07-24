@@ -132,20 +132,32 @@ public class CompraController extends HttpServlet {
             Compra compra = new Compra();
         
             compra.setId(Integer.parseInt(request.getParameter("id")));
+            System.out.println("ID OK");
             compra.setQuantidade_compra(Integer.parseInt(request.getParameter("quantidade_compra")));
+            System.out.println("QTD COMPRA OK");
             compra.setData_compra(Date.valueOf(request.getParameter("data_compra")));
+            System.out.println("DATA OK");
             compra.setValor_compra(Integer.parseInt(request.getParameter("valor_compra")));
+            System.out.println("VALOR OK");
             compra.setId_fornecedor(Integer.parseInt(request.getParameter("fornecedor")));
+            System.out.println("FORNECEDOR OK");
             compra.setId_produto(Integer.parseInt(request.getParameter("produto")));
+            System.out.println("PRODUTO OK");
             compra.setId_funcionario(Integer.parseInt(request.getParameter("funcionario")));
+            System.out.println("FUNCIONARIO OK");
             
             Produto produto = new ProdutoDAO().getProdutoPorID(compra.getId_produto());
+            System.out.println("BUSCA POR PRODUTO OK");
             
             produto.setPrecoCompra(Double.valueOf(compra.getValor_compra()));
+            System.out.println("PRECO COMPRA OK");
             produto.setQtdDisponivel(produto.getQtdDisponivel() + compra.getQuantidade_compra());
+            System.out.println("QTD COMPRA OK");
 
             CompraDAO dao = new CompraDAO();
+            System.out.println("COMPRADAO OK");
             ProdutoDAO produtodao = new ProdutoDAO();
+            System.out.println("PRODUTODAO OK");
 
             if (dao.gravar(compra) && produtodao.gravar(produto)) {
                 mensagem = "Compra realizada com sucesso!";

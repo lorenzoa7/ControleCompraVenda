@@ -42,9 +42,9 @@
                     </div>
                     <div class="form-group">
                         <% if(aux.getData_compra() == null) { %>
-                            <input type="text" class="form-control" name="data_venda" placeholder="Informe a data da compra" onfocus="(this.type='date')" required />
+                            <input type="text" class="form-control" name="data_compra" placeholder="Informe a data da compra" onfocus="(this.type='date')" required />
                         <% } else { %>
-                        <input type="text" class="form-control" name="data_venda" placeholder="Informe a data da compra" onfocus="(this.type='date')" value="<%= aux.getData_compra() %>" required />
+                        <input type="text" class="form-control" name="data_compra" placeholder="Informe a data da compra" onfocus="(this.type='date')" value="<%= aux.getData_compra() %>" required />
                         <% } %>
                     </div>
                     <select class="form-select" aria-label="Selecione o fornecedor" name="fornecedor">
