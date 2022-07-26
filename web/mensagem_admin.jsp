@@ -5,7 +5,7 @@
     <%@include file="cabecalho.html" %>
 </head>
 <body>
-    <jsp:include page="menu_admin.jsp" />
+    <jsp:include page="menu_administradores.jsp" />
 
     <div class="container">
         <div class="justify-content-center align-items-center row">

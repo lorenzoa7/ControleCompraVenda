@@ -5,7 +5,7 @@
     <%@include file="cabecalho.html" %>
 </head>
 <body>
-    <jsp:include page="menu_vendedores.jsp" />
+    <jsp:include page="menu_administradores.jsp" />
     
     <% Funcionario aux = (Funcionario)request.getAttribute("funcionario"); %>
 
