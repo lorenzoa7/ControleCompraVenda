@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 09-Abr-2022 às 13:37
--- Versão do servidor: 5.7.31
--- versão do PHP: 7.4.27
+-- Tempo de geração: 05-Ago-2022 às 01:54
+-- Versão do servidor: 5.7.36
+-- versão do PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 INSERT INTO `clientes` (`id`, `nome`, `cpf`, `endereco`, `bairro`, `cidade`, `uf`, `cep`, `telefone`, `email`) VALUES
 (1, 'Maria José', '515.831.890-50', 'Rua Nilo Pecanha 13', 'Ingá', 'Niterói', 'RJ', '24210480', '(21)654321789', 'maria@gmail.com'),
 (2, 'Malu', '069.057.300-68', 'Rua Passos da partia', 'Boa Viagem', 'Niterói', 'RJ', '24210240', '(21)988617661', 'malu@yahoo.com'),
-(14, 'Leonardo Cruz da Costa', '906.235.927-20', 'Rua Presidente Domiciano', 'inga', 'Niterói', 'RJ', '24210271', '988925670', 'leo.cruz@yahoo.com.br');
+(14, 'Leonardo', '906.235.927-20', 'Rua Presidente Domiciano', 'inga', 'Niterói', 'RJ', '24210271', '988925670', 'leo.cruz@yahoo.com.br');
 
 -- --------------------------------------------------------
 
@@ -127,11 +127,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 
 INSERT INTO `fornecedores` (`id`, `razao_social`, `cnpj`, `endereco`, `bairro`, `cidade`, `uf`, `cep`, `telefone`, `email`) VALUES
 (1, 'LG', '34.051.454/0001-03', 'Rua Antonio Carlos 10', 'Vila Maria', 'São Paulo', 'RJ', '37511-000', '(11)123456789', 'lg@lg.com.br'),
-(2, 'SANSUNG', '59.672.481/0001-24', 'Rua Alceu Wamosy', 'Vila Mariana', 'São Paulo', 'SP', '04105-040', '(11)987654321', 'sansung@sansung.com.br'),
-(10, 'aaaa23', '11.111.111/1111-11', 'aaa', 'aa', 'aa', 'RJ', '111111', '(11)11111-1', '1@1.com'),
-(13, 'aaaa', '11.111.111/11', 'aaa', 'aa', 'aa', 'RJ', '11111111', '(11)11111-1', '1@1.com'),
-(14, '11111', '11111111111111', 'Rua Presidente Domiciano', 'inga', 'NiterÃ³i', 'RJ', '24210271', '988925670', 'leo.cruz@yahoo.com.br'),
-(16, 'aaaa34', '11.111.111/11', '11111111', '6666', '11111111111', 'RJ', '11111111', '(11)1111-11', 'lala@lala.com1');
+(2, 'SAMSUNG', '59.672.481/0001-24', 'Rua Alceu Wamosy', 'Vila Mariana', 'São Paulo', 'SP', '04105-040', '(11)987654321', 'sansung@sansung.com.br');
 
 -- --------------------------------------------------------
 
@@ -154,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id`, `nome`, `cpf`, `senha`, `papel`) VALUES
-(1, 'Leo', '249.252.810-38', '111', '0'),
+(1, 'Admin', '111.111.111-11', '111', '0'),
 (2, 'Carlos', '081.599.500-80', '111', '1'),
 (3, 'Pedro', '167.740.300-41', '111', '2');
 
@@ -186,8 +182,7 @@ INSERT INTO `produtos` (`id`, `nome_produto`, `descricao`, `preco_compra`, `prec
 (1, 'Refrigerador Side by Side LG de 02 Portas Frost Free com 601 Litros', 'Refrigerador Side by Side LG de 02 Portas Frost Free com 601 Litros, Moist Balance Crisper™, Aço Escovado - GC-L247S', '111.00', '11655.01', 16, 'S', 1),
 (2, 'Refrigerador Bottom Freezer Samsung Barosa de 02 Portas Frost Free', 'Refrigerador Bottom Freezer Samsung Barosa de 02 Portas Frost Free com 435 L e Painel Eletrônico Inox Look - RL4353RBASL', '3040.31', '5600.99', 4, 'S', 1),
 (3, 'Samsung Smart TV Crystal UHD TU8000 4K 50', 'Samsung Smart TV Crystal UHD TU8000 4K 50\", Borda Infinita, Alexa built in, Controle Único, Visual Livre de Cabos', '12121.00', '2690.99', 16, 'N', 2),
-(4, 'Samsung Smart TV QLED 4K Q70T 85\"', 'Samsung Smart TV QLED 4K Q70T 85\", Pontos Quânticos, HDR, Borda Infinita, Alexa built in, Modo Ambiente 3.0', '14900.90', '17999.99', 0, 'N', 2),
-(5, 'lala', 'aaaa', '1111.00', '11111.00', 11, 'S', 1);
+(4, 'Samsung Smart TV QLED 4K Q70T 85\"', 'Samsung Smart TV QLED 4K Q70T 85\", Pontos Quânticos, HDR, Borda Infinita, Alexa built in, Modo Ambiente 3.0', '14900.90', '17999.99', 0, 'N', 2);
 
 -- --------------------------------------------------------
 
